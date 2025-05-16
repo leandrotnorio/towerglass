@@ -1,0 +1,40 @@
+{
+  "politics": [
+    {
+      "id": 1,
+      "title": "Novo projeto de lei é aprovado",
+      "summary": "O Congresso aprovou uma nova lei que impacta a economia.",
+      "content": "O Congresso Nacional aprovou, nesta semana, um projeto de lei que promete trazer mudanças significativas para a economia do país. A proposta, que tramitava há meses, foi celebrada por alguns setores, mas criticada por outros.",
+      "date": "2025-04-29",
+      "image": "https://via.placeholder.com/600x400?text=Politics+1"
+    },
+    {
+      "id": 2,
+      "title": "Eleições 2025: O que esperar",
+      "summary": "Analistas discutem os possíveis candidatos para as eleições.",
+      "content": "Com as eleições de 2025 se aproximando, analistas políticos começam a mapear os possíveis candidatos e suas propostas. A disputa promete ser acirrada, com temas como economia e meio ambiente no centro do debate.",
+      "date": "2025-04-28",
+      "image": "https://via.placeholder.com/600x400?text=Politics+2"
+    }
+  ],
+  "world": [
+    {
+      "id": 3,
+      "title": "Conflito internacional em foco",
+      "summary": "Líderes mundiais se reúnem para discutir a paz.",
+      "content": "Líderes de diversos países se reuniram em uma conferência internacional para discutir soluções para conflitos em andamento. A reunião, que durou dois dias, trouxe propostas para cessar-fogo e cooperação global.",
+      "date": "2025-04-29",
+      "image": "https://via.placeholder.com/600x400?text=World+1"
+    }
+  ],
+  "technology": [
+    {
+      "id": 4,
+      "title": "Nova IA revoluciona mercado",
+      "summary": "A xAI lança uma nova tecnologia de inteligência artificial.",
+      "content": "A xAI anunciou o lançamento de uma nova inteligência artificial que promete transformar o mercado de tecnologia. A ferramenta, que combina aprendizado de máquina e processamento de linguagem natural, já está sendo testada por grandes empresas.",
+      "date": "2025-04-30",
+      "image": "https://via.placeholder.com/600x400?text=Tech+1"
+    }
+  ]
+}
