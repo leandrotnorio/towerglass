@@ -18,7 +18,7 @@ export default function HomePage() {
         
         {/* Imagem de fundo */}
         <div
-          className="absolute inset-0 bg-no-repeat bg-center bg-cover"
+          className="absolute inset-0 m-6 bg-no-repeat bg-center bg-cover"
           style={{
             backgroundImage: "url('/images.jpg')",
           }}
@@ -28,7 +28,7 @@ export default function HomePage() {
         </div>
 
         {/* Conteúdo sobre a imagem */}
-        <div className="relative z-10 bg-white bg-opacity-80 p-6 rounded-xl shadow-lg max-w-2xl mx-auto">
+        <div className="relative z-10 bg-white bg-opacity-80 p-6 rounded-xl shadow-lg max-w-2xl m-8">
           <h1 className="text-4xl sm:text-5xl font-extrabold text-blue-700 mb-4">
             Tecnologia em engenharia de vidro
           </h1>
