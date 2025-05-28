@@ -18,7 +18,7 @@ export default function HomePage() {
         
         {/* Imagem de fundo */}
         <div
-          className="absolute inset-0 m-6 bg-no-repeat bg-center bg-cover"
+          className="absolute top-0 left-0 right-0 bottom-0 m-6 rounded-xl bg-no-repeat bg-center bg-cover overflow-hidden"
           style={{
             backgroundImage: "url('/images.jpg')",
           }}

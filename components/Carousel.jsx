@@ -1,4 +1,7 @@
-'use client';
+
+// Função de rolagem manual para o usuario
+
+/*'use client';
 import React, { useEffect, useState, useRef } from 'react';
 
 const InfiniteAutoCarousel = ({ images = [], interval = 2000 }) => {
@@ -85,5 +88,145 @@ const InfiniteAutoCarousel = ({ images = [], interval = 2000 }) => {
   );
 };
 
-export default InfiniteAutoCarousel;
+export default InfiniteAutoCarousel;}*/
 
+
+
+
+
+
+
+
+
+
+// Função de rolagem automática para o usuario
+
+
+
+/*'use client';
+import React, { useEffect, useRef } from 'react';
+
+const InfiniteAutoCarousel = ({ images = [], speed = 0.9 }) => {
+  const scrollRef = useRef(null);
+
+  const duplicatedImages = [...images, ...images];
+
+  useEffect(() => {
+    const container = scrollRef.current;
+    if (!container || images.length === 0) return;
+
+    const totalWidth = container.scrollWidth / 2; // largura original
+    container.scrollLeft = 0;
+
+    let animationFrameId;
+
+    const scrollStep = () => {
+      if (!container) return;
+
+      container.scrollLeft += speed;
+
+      // Quando atinge o final da primeira metade, reinicia
+      if (container.scrollLeft >= totalWidth) {
+        container.scrollLeft = 0;
+      }
+
+      animationFrameId = requestAnimationFrame(scrollStep);
+    };
+
+    animationFrameId = requestAnimationFrame(scrollStep);
+
+    return () => cancelAnimationFrame(animationFrameId);
+  }, [images, speed]);
+
+  return (
+    <div className="w-full max-w-6xl mx-auto overflow-hidden">
+      <div
+        ref={scrollRef}
+        className="flex overflow-x-scroll scroll-smooth space-x-4 px-4 scrollbar-hide"
+        style={{
+          scrollSnapType: 'none', // Desabilita o snap para rolagem suave
+        }}
+      >
+        {duplicatedImages.map((image, index) => (
+          <img
+            key={index}
+            src={image}
+            alt={`Obra ${index + 1}`}
+            className="w-full h-100 mt-6 object-cover rounded-lg shadow-md flex-shrink-0"
+            style={{
+              minWidth: '100%',
+            }}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default InfiniteAutoCarousel;*/
+
+
+
+
+
+// Função de rolagem automática e manual para o usuario
+
+
+'use client';
+import React, { useEffect, useRef } from 'react';
+
+const InfiniteAutoCarousel = ({ images = [], speed = 0.9 }) => {
+  const scrollRef = useRef(null);
+  const animationRef = useRef(null);
+
+  const duplicatedImages = [...images, ...images];
+
+  useEffect(() => {
+    const container = scrollRef.current;
+    if (!container || images.length === 0) return;
+
+    let rafId;
+
+    const scroll = () => {
+      container.scrollLeft += speed;
+
+      const totalScrollWidth = container.scrollWidth / 2;
+
+      if (container.scrollLeft >= totalScrollWidth) {
+        container.scrollLeft = 0;
+      }
+
+      rafId = requestAnimationFrame(scroll);
+    };
+
+    rafId = requestAnimationFrame(scroll);
+
+    return () => cancelAnimationFrame(rafId);
+  }, [images, speed]);
+
+  return (
+    <div className="w-full overflow-hidden">
+      <div
+        ref={scrollRef}
+        className="flex overflow-x-scroll space-x-4 scrollbar-hide"
+        style={{
+          scrollSnapType: 'none',
+        }}
+      >
+        {duplicatedImages.map((image, index) => (
+          <img
+            key={index}
+            src={image}
+            alt={`Slide ${index}`}
+            className="h-64 object-cover flex-shrink-0 rounded-lg shadow-md"
+            style={{
+              minWidth: '100%',
+            }}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default InfiniteAutoCarousel;
