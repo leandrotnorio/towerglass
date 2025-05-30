@@ -54,7 +54,7 @@ export default function Navbar() {
 
       {/* Menu Mobile */}
       {menuOpen && (
-        <div className="sm:hidden bg-gray-200 px-6 pt-6 space-y-7 shadow-md fixed z-50 top-24 right-0 w-1/2 h-[27rem]">
+        <div className="sm:hidden bg-gray-200 px-6 pt-6 space-y-7 shadow-md fixed z-50 top-20 right-0 w-1/2 h-[27rem]">
           {navigation.map((item) => (
             <Link
               key={item.name}

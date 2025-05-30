@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar.jsx'
 import Footer from '../components/Footer.jsx'
 
 export const metadata = {
-  title: 'Tower Glass',
+  title: 'AGT Vidros',
   description: 'Engenharia em tecnologia de vidros',
 }
 
