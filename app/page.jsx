@@ -11,7 +11,7 @@ const images = [
 
 export default function HomePage() {
   return (
-    <main className="bg-white rounded-lg shadow-lg">
+    <main className="bg-black shadow-lg rounded-lg">
 
       {/* HERO com imagem de fundo profissional */}
       <section className="relative mt-28 flex items-center justify-center text-center p-4 h-[500px] sm:h-[600px] md:h-[700px] lg:h-[800px] overflow-hidden">
@@ -39,7 +39,7 @@ export default function HomePage() {
       </section>
 
       {/* Seção Obras */}
-      <section className="max-w-6xl mx-auto text-center py-16 px-4">
+      <section className=" text-center">
         <h2 className="text-5xl sm:text-6xl font-bold text-blue-700 mb-8">
           Obras
         </h2>

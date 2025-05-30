@@ -205,10 +205,10 @@ const InfiniteAutoCarousel = ({ images = [], speed = 0.9 }) => {
   }, [images, speed]);
 
   return (
-    <div className="w-full overflow-hidden">
+    <div className="w-full mb-6 lg:mb-6 overflow-hidden">
       <div
         ref={scrollRef}
-        className="flex overflow-x-scroll space-x-4 scrollbar-hide"
+        className="flex m-2 overflow-x-scroll space-x-6 scrollbar-hide"
         style={{
           scrollSnapType: 'none',
         }}
@@ -218,7 +218,7 @@ const InfiniteAutoCarousel = ({ images = [], speed = 0.9 }) => {
             key={index}
             src={image}
             alt={`Slide ${index}`}
-            className="h-64 object-cover flex-shrink-0 rounded-lg shadow-md"
+            className="lg:h-96 m-4 object-cover flex-shrink-0 rounded-lg shadow-md"
             style={{
               minWidth: '100%',
             }}
