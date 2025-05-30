@@ -23,7 +23,7 @@ export default function Navbar() {
 
           {/* Logo */}
             <div className="bg-blue-800 rounded-xl px-3 py-3 text-xl font-bold text-white">
-              <Link href="/">Tower Glass</Link>
+              <Link href="/">AGT Vidros</Link>
             </div>
 
           {/* Botão Mobile */}
