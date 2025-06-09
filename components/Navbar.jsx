@@ -17,7 +17,7 @@ export default function Navbar() {
 
 
   return (
-    <nav className="bg-white shadow-md w-full fixed z-40">
+    <nav className="bg-blue-800 shadow-md w-full fixed z-40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-2">
         <div className="flex justify-between h-[5rem] items-center">
 
@@ -30,7 +30,7 @@ export default function Navbar() {
         <div className="sm:hidden pr-0">
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="text-blue-800 text-2xl focus:outline-none"
+              className="text-white text-2xl focus:outline-none"
               aria-label="Toggle menu"
             >
               {menuOpen ? '✖' : '☰'}
@@ -54,12 +54,12 @@ export default function Navbar() {
 
       {/* Menu Mobile */}
       {menuOpen && (
-        <div className="sm:hidden bg-gray-200 px-6 pt-6 space-y-7 shadow-md fixed z-50 top-20 right-0 w-1/2 h-[27rem]">
+        <div className="sm:hidden bg-blue-800 px-6 pt-6 space-y-7 shadow-md fixed z-50 top-[79px] right-0 w-1/2 h-[27rem]">
           {navigation.map((item) => (
             <Link
               key={item.name}
               href={item.href}
-              className="block text-xl font-extrabold text-gray-800 hover:text-blue-700 transition"
+              className="block text-xl font-extrabold text-white hover:text-blue-700 transition"
               onClick={() => setMenuOpen(false)}
             >
               {item.name}
