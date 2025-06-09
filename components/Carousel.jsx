@@ -172,10 +172,10 @@ export default InfiniteAutoCarousel;*/
 // Função de rolagem automática e manual para o usuario
 
 
-'use client';
+/*'use client';
 import React, { useEffect, useRef } from 'react';
 
-const InfiniteAutoCarousel = ({ images = [], speed = 0.9 }) => {
+const InfiniteAutoCarousel = ({ images = [], speed = 0.01 }) => {
   const scrollRef = useRef(null);
   const animationRef = useRef(null);
 
@@ -229,4 +229,249 @@ const InfiniteAutoCarousel = ({ images = [], speed = 0.9 }) => {
   );
 };
 
+export default InfiniteAutoCarousel;*/
+
+
+
+
+
+
+
+
+/*'use client';
+import React, { useEffect, useRef, useState } from 'react';
+
+const InfiniteAutoCarousel = ({ images = [], speed = 0.01 }) => {
+  const scrollRef = useRef(null);
+  const animationRef = useRef(null);
+  const isHoveredRef = useRef(false); // ref para guardar o estado atualizado
+  const [isHovered, setIsHovered] = useState(false);
+
+  // Sincroniza o estado com a ref para ter sempre o valor atualizado no loop
+  useEffect(() => {
+    isHoveredRef.current = isHovered;
+  }, [isHovered]);
+
+  const duplicatedImages = [...images, ...images];
+
+  useEffect(() => {
+    const container = scrollRef.current;
+    if (!container || images.length === 0) return;
+
+    const scroll = () => {
+      if (!isHoveredRef.current) {  // verifica a ref para pausar se hover
+        container.scrollLeft += speed;
+
+        const totalScrollWidth = container.scrollWidth / 2;
+        if (container.scrollLeft >= totalScrollWidth) {
+          container.scrollLeft = 0;
+        }
+      }
+      animationRef.current = requestAnimationFrame(scroll);
+    };
+
+    animationRef.current = requestAnimationFrame(scroll);
+
+    return () => cancelAnimationFrame(animationRef.current);
+  }, [images, speed]);
+
+  return (
+    <div
+      className="w-full mb-6 lg:mb-6 overflow-hidden"
+      role="region"
+      aria-label="Carrossel automático de imagens"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <div
+        ref={scrollRef}
+        className="flex m-2 overflow-x-scroll space-x-6 scrollbar-hide"
+        style={{ scrollSnapType: 'none' }}
+      >
+        {duplicatedImages.map((image, index) => (
+          <img
+            key={index}
+            src={image}
+            alt={`Slide ${index + 1}`}
+            className="lg:h-96 m-4 object-cover flex-shrink-0 rounded-lg shadow-md"
+            style={{ minWidth: '100%' }}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default InfiniteAutoCarousel;*/
+
+
+
+
+// pausa de 2s no carousel desktop
+
+/*'use client';
+import React, { useEffect, useRef, useState } from 'react';
+
+const InfiniteAutoCarousel = ({ images = [], speed = 0.01 }) => {
+  const scrollRef = useRef(null);
+  const animationRef = useRef(null);
+  const timeoutRef = useRef(null);
+  const isPausedRef = useRef(false);
+
+  const duplicatedImages = [...images, ...images];
+
+  useEffect(() => {
+    const container = scrollRef.current;
+    if (!container || images.length === 0) return;
+
+    const scroll = () => {
+      if (!isPausedRef.current) {
+        container.scrollLeft += speed;
+
+        const totalScrollWidth = container.scrollWidth / 2;
+        if (container.scrollLeft >= totalScrollWidth) {
+          container.scrollLeft = 0;
+        }
+      }
+      animationRef.current = requestAnimationFrame(scroll);
+    };
+
+    animationRef.current = requestAnimationFrame(scroll);
+
+    return () => {
+      cancelAnimationFrame(animationRef.current);
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    };
+  }, [images, speed]);
+
+  const handleMouseEnter = () => {
+    isPausedRef.current = true;
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
+    }
+  };
+
+  const handleMouseLeave = () => {
+    // Espera 2 segundos antes de voltar o scroll automático
+    timeoutRef.current = setTimeout(() => {
+      isPausedRef.current = false;
+    }, 2000);
+  };
+
+  return (
+    <div
+      className="w-full mb-6 lg:mb-6 overflow-hidden"
+      role="region"
+      aria-label="Carrossel automático de imagens"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      <div
+        ref={scrollRef}
+        className="flex m-2 overflow-x-scroll space-x-6 scrollbar-hide"
+        style={{ scrollSnapType: 'none' }}
+      >
+        {duplicatedImages.map((image, index) => (
+          <img
+            key={index}
+            src={image}
+            alt={`Slide ${index + 1}`}
+            className="lg:h-96 m-4 object-cover flex-shrink-0 rounded-lg shadow-md"
+            style={{ minWidth: '100%' }}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default InfiniteAutoCarousel;*/
+
+
+
+
+
+'use client';
+import React, { useEffect, useRef } from 'react';
+
+const InfiniteAutoCarousel = ({ images = [], speed = 0.1 }) => {
+  const scrollRef = useRef(null);
+  const animationRef = useRef(null);
+  const timeoutRef = useRef(null);
+  const isPausedRef = useRef(false);
+
+  const duplicatedImages = [...images, ...images];
+
+  useEffect(() => {
+    const container = scrollRef.current;
+    if (!container || images.length === 0) return;
+
+    const scroll = () => {
+      if (!isPausedRef.current) {
+        container.scrollLeft += speed;
+        const totalScrollWidth = container.scrollWidth / 2;
+        if (container.scrollLeft >= totalScrollWidth) {
+          container.scrollLeft = 0;
+        }
+      }
+      animationRef.current = requestAnimationFrame(scroll);
+    };
+
+    animationRef.current = requestAnimationFrame(scroll);
+
+    return () => {
+      cancelAnimationFrame(animationRef.current);
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    };
+  }, [images, speed]);
+
+  const pauseScroll = () => {
+    isPausedRef.current = true;
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
+    }
+  };
+
+  const resumeScrollWithDelay = () => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    timeoutRef.current = setTimeout(() => {
+      isPausedRef.current = false;
+    }, 2000);
+  };
+
+  return (
+    <div
+      className="w-full mb-6 pb-8 lg:mb-6 overflow-hidden"
+      role="region"
+      aria-label="Carrossel automático de imagens"
+      onMouseEnter={pauseScroll}
+      onMouseLeave={resumeScrollWithDelay}
+      onTouchStart={pauseScroll}
+      onTouchEnd={resumeScrollWithDelay}
+      onTouchCancel={resumeScrollWithDelay}
+      onTouchMove={pauseScroll}
+    >
+      <div
+        ref={scrollRef}
+        className="flex mx-10 px-8 overflow-x-scroll space-x-6 scrollbar-hide"
+        style={{ scrollSnapType: 'none', scrollBehavior: 'auto' }}
+      >
+        {duplicatedImages.map((image, index) => (
+          <img
+            key={index}
+            src={image}
+            alt={`Slide ${index + 1}`}
+            className="lg:h-96 m-4 object-cover flex-shrink-0 rounded-lg shadow-md"
+            style={{ minWidth: '100%' }}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
 export default InfiniteAutoCarousel;
+
+
