@@ -1,10 +1,11 @@
 'use client'
-import { useState } from 'react'
+import { useRef, useEffect, useState } from 'react'
 import Link from 'next/link'
 
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const menuRef = useRef(null)
 
   const navigation = [
   { name: 'Home', href: '/' },
@@ -14,6 +15,19 @@ export default function Navbar() {
   { name: 'Sobre nós', href: '/about' },
   { name: 'Contato', href: '#contato' },
 ]
+
+  useEffect(() => {
+    const el = menuRef.current
+    if (el) {
+      if (menuOpen) {
+        // Abre: maxHeight igual à altura total do conteúdo para animar a expansão
+        el.style.maxHeight = el.scrollHeight + 'px'
+      } else {
+        // Fecha: maxHeight zero para animar recolhimento
+        el.style.maxHeight = '0px'
+      }
+    }
+  }, [menuOpen])
 
 
   return (
@@ -54,12 +68,12 @@ export default function Navbar() {
 
       {/* Menu Mobile */}
       {menuOpen && (
-        <div className="sm:hidden bg-blue-800 px-6 pt-6 space-y-7 shadow-md fixed z-50 top-[79px] right-0 w-1/2 h-[27rem]">
+        <div className="sm:hidden transition-[max-height] duration-300 ease-in-out bg-blue-800 px-6 pt-6 space-y-7 shadow-md fixed z-50 top-[79px] right-0 w-1/2 h-[27rem]">
           {navigation.map((item) => (
             <Link
               key={item.name}
               href={item.href}
-              className="block text-xl font-extrabold text-white hover:text-blue-700 transition"
+              className="block text-xl font-extrabold text-white hover:text-blue-800 transition"
               onClick={() => setMenuOpen(false)}
             >
               {item.name}

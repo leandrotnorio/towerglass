@@ -1,6 +1,8 @@
 'use client';
+import Image from 'next/image';
 import React from 'react';
 import Carousel from '../components/Carousel.jsx';
+import TestimonialsCarousel from '../components/TestmonialsCarousel.jsx'
 
 const images = [
   '/images.jpg',
@@ -35,7 +37,7 @@ export default function HomePage() {
 
       {/* Seção Obras */}
       <div className=" text-center mt-8">
-        <h2 className="text-5xl sm:text-6xl font-bold text-blue-700 mb-2">
+        <h2 className="text-5xl sm:text-6xl font-bold text-blue-700">
           Obras
         </h2>
         <Carousel 
@@ -44,6 +46,10 @@ export default function HomePage() {
         showButtons={true}
         showIndicators={true}
         />
+      </div>
+      <div className='text-center'>
+        <h2 className='sm:text-6x1 font-bold text-blue-700'>Depoimentos</h2>
+        <TestimonialsCarousel/>
       </div>
     </section>
   );
