@@ -60,7 +60,7 @@ export default function TestimonialsCarousel(){
     const { name, date, stars, message, image } = testmonials[current]
 
     return (
-        <div className='p-6 bg-gray-200 text-center'>
+        <div className='p-6 lg:justify-items-center bg-gray-200 text-center'>
             <h2 className='text-5xl text-center flex justify-center py-4 sm:text-6xl font-bold text-blue-700'>DEPOIMENTOS</h2>
             <p></p>
             <div className="flex justify-center mb-4">
@@ -79,7 +79,7 @@ export default function TestimonialsCarousel(){
                     alt="estrela"
                     width={35}
                     height={24}
-                    className={i < stars ? '' : 'opacity-30'}
+                    className="opacity-100"
                     />
                 ))}
             </div>
@@ -96,7 +96,7 @@ export default function TestimonialsCarousel(){
                 <p className="mb-4 text-black">Com base em {testmonials.length} avaliações</p>
                 <div className="w-full sm:w-80 md:w-96 lg:w-1/3 py-6 bg-white rounded-lg shadow-md flex flex-col items-center">
 
-                    <div className="flex justify-start items-center space-x-3">
+                    <div className="flex justify-start items-center space-x-4">
                         <Image src={image} alt="foto da pessoa" width={55} height={0} className="rounded-full mb-4"/>
                         <p className="font-semibold  flex justify-center items center">{name} <span className="text-gray-500 ml-3">{date}</span></p>
                     </div>
