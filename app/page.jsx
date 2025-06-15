@@ -38,7 +38,7 @@ export default function HomePage() {
       {/* Seção Obras */}
       <div className=" text-center mt-8">
         <h2 className="text-5xl sm:text-6xl font-bold text-blue-700">
-          Obras
+          OBRAS
         </h2>
         <Carousel 
         images={images}
@@ -48,7 +48,7 @@ export default function HomePage() {
         />
       </div>
       <div className='text-center'>
-        <h2 className='sm:text-6x1 font-bold text-blue-700'>Depoimentos</h2>
+        <h2 className='text-4xl py-2 sm:text-6xl font-bold text-blue-700'>DEPOIMENTOS</h2>
         <TestimonialsCarousel/>
       </div>
     </section>
