@@ -453,6 +453,7 @@ const InfiniteAutoCarousel = ({ images = [], speed = 0.1 }) => {
       onTouchCancel={resumeScrollWithDelay}
       onTouchMove={pauseScroll}
     >
+       <h2 className="text-5xl py-4 sm:text-6xl font-bold text-blue-700">OBRAS</h2>
       <div
         ref={scrollRef}
         className="flex mx-10 px-8 overflow-x-scroll space-x-6 scrollbar-hide"

@@ -11,6 +11,37 @@ const images = [
   '/images.jpg',
 ];
 
+const testmonials = [
+  {
+    name: "Leandro Tenorio",
+    date: "07/10/2024",
+    stars: 5,
+    message: "Excelente serviço, muito satisfeito!",
+    image: "/fotoperfil.jpg",
+  },
+  {
+    name: "Maria Silva",
+    date: "05/09/2024",
+    stars: 4,
+    message: "Muito bom, mas poderia melhorar o atendimento.",
+    image: "/fotoperfil.jpg",
+  },
+  {
+    name: "Carlos Souza",
+    date: "12/08/2024",
+    stars: 5,
+    message: "Atendimento ótimo, recomendo!",
+    image: "/fotoperfil.jpg",
+  },
+  {
+    name: "João Oliveira",
+    date: "22/07/2024",
+    stars: 4,
+    message: "Bom, mas poderia ter mais opções.",
+    image: "/fotoperfil.jpg",
+  },
+];
+
 export default function HomePage() {
   return (
     <section className="bg-white shadow-lg rounded-xl">
@@ -37,9 +68,6 @@ export default function HomePage() {
 
       {/* Seção Obras */}
       <div className=" text-center mt-8">
-        <h2 className="text-5xl sm:text-6xl font-bold text-blue-700">
-          OBRAS
-        </h2>
         <Carousel 
         images={images}
         speed={1}
@@ -48,8 +76,10 @@ export default function HomePage() {
         />
       </div>
       <div className='text-center'>
-        <h2 className='text-4xl py-2 sm:text-6xl font-bold text-blue-700'>DEPOIMENTOS</h2>
-        <TestimonialsCarousel/>
+        <TestimonialsCarousel 
+        reviews={testmonials}
+
+        />
       </div>
     </section>
   );
