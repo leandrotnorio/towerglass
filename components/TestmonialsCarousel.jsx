@@ -60,8 +60,8 @@ export default function TestimonialsCarousel(){
     const { name, date, stars, message, image } = testmonials[current]
 
     return (
-        <div className='p-6 bg-gray-200 text-center'>
-            <h2 className='text-5xl text-center pr-[900rem] py-4 sm:text-6xl font-bold text-blue-700'>DEPOIMENTOS</h2>
+        <div className='p-6 bg-gray-200'>
+            <h2 className='text-5xl flex justify-center text-center py-4 sm:text-6xl font-bold text-blue-700'>DEPOIMENTOS</h2>
             <p></p>
             <div className="flex justify-center mb-4">
                 <Image 
