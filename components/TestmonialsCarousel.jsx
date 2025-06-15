@@ -61,7 +61,7 @@ export default function TestimonialsCarousel(){
 
     return (
         <div className='p-6 bg-gray-200 text-center'>
-            <h2 className='text-5xl text-center flex py-4 sm:text-6xl font-bold text-blue-700'>DEPOIMENTOS</h2>
+            <h2 className='text-5xl text-center flex justify-center py-4 sm:text-6xl font-bold text-blue-700'>DEPOIMENTOS</h2>
             <p></p>
             <div className="flex justify-center mb-4">
                 <Image 
