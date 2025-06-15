@@ -12,7 +12,7 @@ const testmonials = [
   {
     name: "Maria Silva",
     date: "05/09/2024",
-    stars: 4,
+    stars: 5,
     message: "Muito bom, mas poderia melhorar o atendimento.",
     image: "/fotoperfil.jpg",
   },
@@ -33,15 +33,15 @@ const testmonials = [
   {
     name: "gustavo ferreira",
     date: "22/07/2024",
-    stars: 4,
-    message: "Bom, mas poderia ter mais opções.",
+    stars: 5,
+    message: "uma entrega rápida e eficiente",
     image: "/fotoperfil.jpg",
   },
   {
     name: "Arthur Oliveira",
     date: "22/07/2024",
-    stars: 4,
-    message: "Bom, mas poderia ter mais opções.",
+    stars: 5,
+    message: "obra entregue antes do prazo, muito comprometimento",
     image: "/fotoperfil.jpg",
   },
 ];
@@ -61,7 +61,7 @@ export default function TestimonialsCarousel(){
 
     return (
         <div className='p-6 bg-gray-200'>
-            <h2 className='text-5xl  py-4 sm:text-6xl font-bold text-blue-700'>DEPOIMENTOS</h2>
+            <h2 className='text-5xl py-4 sm:text-6xl font-bold text-blue-700'>DEPOIMENTOS</h2>
             <p></p>
             <div className="flex justify-center mb-4">
                 <Image 
