@@ -12,8 +12,8 @@ const testmonials = [
   {
     name: "Maria Silva",
     date: "05/09/2024",
-    stars: 4,
-    message: "Muito bom, mas poderia melhorar o atendimento.",
+    stars: 5,
+    message: "obra finalizada no prazo, comprometimento e eficiencia na entrega do serviço",
     image: "/fotoperfil.jpg",
   },
   {
@@ -26,8 +26,8 @@ const testmonials = [
   {
     name: "João Oliveira",
     date: "22/07/2024",
-    stars: 4,
-    message: "Bom, mas poderia ter mais opções.",
+    stars: 5,
+    message: "há muito tempo não recebia um serviço com execelencia aqui na minha empresa agt superou !!!",
     image: "/fotoperfil.jpg",
   },
   {
@@ -41,7 +41,7 @@ const testmonials = [
     name: "Arthur Oliveira",
     date: "22/07/2024",
     stars: 4,
-    message: "Bom, mas poderia ter mais opções.",
+    message: "visitei ontem o projeto do comercial ficou show!!!",
     image: "/fotoperfil.jpg",
   },
 ];
