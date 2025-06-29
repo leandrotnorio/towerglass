@@ -47,14 +47,14 @@ export default function HomePage() {
     <section className="bg-white shadow-lg rounded-xl">
 
       {/* HERO com imagem de fundo profissional */}
-      <div className="relative mt-[5rem] flex items-center justify-center text-center  h-[221px] sm:h-[600px] md:h-[700px] lg:h-[800px] overflow-hidden">
+      <div className="relative mt-[5rem] flex items-center justify-center text-center  h-[650px] sm:h-[600px] md:h-[700px] lg:h-[800px] overflow-hidden">
         
         
         {/* Imagem de fundo */}
         <div
-          className="absolute top-0  py-6 rounded-t-xl bg-no-repeat bg-center bg-cover overflow-hidden"
+          className="absolute top-0 h-[20rem]  rounded-t-xl bg-no-repeat bg-center bg-cover overflow-hidden"
           style={{
-            backgroundImage: "url('/images.jpg')",
+            backgroundImage: "url('/guardacorpoescada.png')",
           }}
         >
            <h1 className="text-4xl sm:text-5xl font-extrabold text-blue-700 m-2">
