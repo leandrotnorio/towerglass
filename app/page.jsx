@@ -47,7 +47,7 @@ export default function HomePage() {
     <section className="bg-white shadow-lg rounded-xl">
 
       {/* HERO com imagem de fundo profissional */}
-      <div className="relative mt-[5rem] flex items-center justify-center text-center  h-[650px] sm:h-[600px] md:h-[700px] lg:h-[800px] overflow-hidden">
+      <div className="relative mt-[5rem] flex items-center justify-center text-center  h-[500px] sm:h-[600px] md:h-[700px] lg:h-[800px] overflow-hidden">
         
         
         {/* Imagem de fundo */}
