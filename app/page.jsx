@@ -3,6 +3,7 @@ import Image from 'next/image';
 import React from 'react';
 import Carousel from '../components/Carousel.jsx';
 import TestimonialsCarousel from '../components/TestmonialsCarousel.jsx'
+import ButtonPrimary from '@/components/Buttonprimary.jsx';
 
 const images = [
   '/images.jpg',
@@ -44,25 +45,27 @@ const testmonials = [
 
 export default function HomePage() {
   return (
-    <section className="bg-white shadow-lg rounded-xl">
+    <section className="bg-white shadow-lg">
 
       {/* HERO com imagem de fundo profissional */}
-      <div className="relative mt-[5rem] flex items-center justify-center text-center  h-[500px] sm:h-[600px] md:h-[700px] lg:h-[800px] overflow-hidden">
+      <div className="relative mt-[76px] flex items-center justify-center text-center  h-[550px] sm:h-[600px] md:h-[700px] lg:h-[800px] overflow-hidden">
         
         
         {/* Imagem de fundo */}
         <div
-          className="absolute top-0 h-[20rem]  rounded-t-xl bg-no-repeat bg-center bg-cover overflow-hidden"
+          className="absolute top-0 h-[30rem]   bg-no-repeat bg-center bg-cover overflow-hidden"
           style={{
             backgroundImage: "url('/guardacorpoescada.png')",
           }}
-        >
-           <h1 className="text-4xl sm:text-5xl font-extrabold text-blue-700 m-2">
-            Tecnologia em engenharia de vidro
-          </h1>
-          <p className="text-white text-lg sm:text-xl font-semibold">
-            Transparência, inovação e estrutura para grandes obras.
-          </p>
+        > <div className='py-[4rem] mr-[100px]'>
+            <h1 className="text-[25px] mb-4 sm:text-5xl font-extrabold text-blue-700">
+              Descubra a sacada de como tornar seu ambiente em alta performance de luxo para crescimento tanto pessoal quanto empresarial
+            </h1>
+            <p className="text-white text-lg sm:text-xl font-semibold">
+              Uma experiência única, que mudará sua vida pra sempre.
+            </p>
+            <ButtonPrimary/>
+          </div>
           </div>
       </div>
 

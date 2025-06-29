@@ -1,17 +1,20 @@
 
 function ButtonReq({link, children}){
     return (
-        <button onClick={() => alert(link)}>
-            {children}
-        </button>
+        <button className="my-8"><a href={link} // Usando o link diretamente na tag <a>
+      target="_blank" // Abre o link em uma nova aba
+      rel="noopener noreferrer" // Segurança ao abrir link em nova aba
+      className="px-4 py-2 mb-8 bg-blue-500 text-white rounded hover:bg-blue-700 transition">
+        {children}
+        </a></button>
     )
 }
 
-export default function Buttonprimary () {
+export default function ButtonPrimary ({link}) {
 
     return (
         <div>
-            <ButtonReq link=''>Solicitar Orçamento</ButtonReq>
+            <ButtonReq link={"https://www.instagram.com/leandrotnorio"}>Solicitar Orçamento</ButtonReq>
         </div>
     )
 
