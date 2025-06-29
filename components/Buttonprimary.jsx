@@ -14,7 +14,7 @@ export default function ButtonPrimary ({link}) {
 
     return (
         <div>
-            <ButtonReq link={"https://www.instagram.com/leandrotnorio"}>Solicitar Orçamento</ButtonReq>
+            <ButtonReq link={"https://www.instagram.com/agtvidros"}>Solicitar Orçamento</ButtonReq>
         </div>
     )
 

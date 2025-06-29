@@ -48,16 +48,13 @@ export default function HomePage() {
     <section className="bg-white shadow-lg">
 
       {/* HERO com imagem de fundo profissional */}
-      <div className="relative mt-[76px] flex items-center justify-center text-center  h-[550px] sm:h-[600px] md:h-[700px] lg:h-[800px] overflow-hidden">
+      <div className="relative  mt-[76px] flex items-center justify-center text-center  h-[550px] sm:h-[600px] md:h-[700px] lg:h-[800px] overflow-hidden">
         
         
         {/* Imagem de fundo */}
-        <div
-          className="absolute top-0 h-[30rem]   bg-no-repeat bg-center bg-cover overflow-hidden"
-          style={{
-            backgroundImage: "url('/guardacorpoescada.png')",
-          }}
-        > <div className='py-[4rem] mr-[100px]'>
+
+        
+        <div className='py-[4rem] z-10  mr-[100px]'>
             <h1 className="text-[25px] mb-4 sm:text-5xl font-extrabold text-blue-700">
               Descubra a sacada de como tornar seu ambiente em alta performance de luxo para crescimento tanto pessoal quanto empresarial
             </h1>
@@ -65,8 +62,9 @@ export default function HomePage() {
               Uma experiência única, que mudará sua vida pra sempre.
             </p>
             <ButtonPrimary/>
-          </div>
-          </div>
+        </div>
+          <img alt="Logo do Google" src="/guardacorpoescada.png" className=" absolute z-0 top-0 h-[30rem]  bg-no-repeat bg-center bg-cover overflow-hidden" Img/>
+          
       </div>
 
       {/* Seção Obras */}
