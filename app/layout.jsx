@@ -1,7 +1,7 @@
 import './globals.css'
 import Navbar from '../components/Navbar.jsx'
 import Footer from '../components/Footer.jsx'
-import Image from 'next/image'
+
 
 export const metadata = {
   title: 'AGT Vidros',

@@ -4,6 +4,7 @@ import { useRef, useEffect, useState } from 'react'
 import Link from 'next/link'
 
 
+
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
   const menuRef = useRef(null)
@@ -41,7 +42,7 @@ export default function Navbar() {
 
           {/* Logo */}
             <Link  href="/">
-              <Image src={logoagt} alt="Logo" layout="intrinsic" width={110} height={10} />
+              <Image src={logoagt} alt="Logo" layout="intrinsic" width={150} height={10} />
             </Link>
 
           {/* Botão Mobile */}

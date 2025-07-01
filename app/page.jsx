@@ -5,7 +5,7 @@ import Carousel from '../components/Carousel.jsx';
 import TestimonialsCarousel from '../components/TestmonialsCarousel.jsx'
 import ButtonPrimary from '@/components/Buttonprimary.jsx';
 
-const logoagt = '/agtvidroslogo.svg'
+
 
 const backgroundimage = '/guardacorpoescada.png'
 
