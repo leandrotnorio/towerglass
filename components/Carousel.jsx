@@ -464,7 +464,7 @@ const InfiniteAutoCarousel = ({ images = [], speed = 0.1 }) => {
             key={index}
             src={image}
             alt={`Slide ${index + 1}`}
-            className="lg:h-[150px] h-[500px] m-4 object-cover flex-shrink-0 rounded-lg shadow-md"
+            className="lg:h-[150px] h-[500px] object-cover flex-shrink-0 rounded-lg shadow-md"
             style={{ minWidth: '100%' }}
           />
         ))}

@@ -10,10 +10,11 @@ import ButtonPrimary from '@/components/Buttonprimary.jsx';
 const backgroundimage = '/guardacorpoescada.png'
 
 const images = [
-  '/images.jpg',
-  '/images.jpg',
-  '/images.jpg',
-  '/images.jpg',
+  '/esquadria.jpg',
+  '/faxada.jpg',
+  '/guardacorpoescada.png',
+  '/portadacaixa.jpg',
+  '/janela.jpg'
 ];
 
 const testmonials = [
