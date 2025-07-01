@@ -4,8 +4,11 @@ import Footer from '../components/Footer.jsx'
 
 
 export const metadata = {
-  title: 'AGT Vidros',
+  title: 'agt vidros',
   description: 'Engenharia em tecnologia de vidros',
+  icons: {
+    icon: '/agtvidroslogo.svg',
+  }
 }
 
 

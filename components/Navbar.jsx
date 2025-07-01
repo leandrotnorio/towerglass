@@ -42,7 +42,7 @@ export default function Navbar() {
 
           {/* Logo */}
             <Link  href="/">
-              <Image src={logoagt} alt="Logo" layout="intrinsic" width={150} height={10} />
+              <Image  src={logoagt} alt="Logo"  width={150} height={10} />
             </Link>
 
           {/* Botão Mobile */}
