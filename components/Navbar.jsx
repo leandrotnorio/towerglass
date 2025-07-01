@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image';
 import { useRef, useEffect, useState } from 'react'
 import Link from 'next/link'
 
@@ -6,6 +7,9 @@ import Link from 'next/link'
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
   const menuRef = useRef(null)
+  
+  const logoagt = '/agtvidroslogo.svg'
+  
 
   const navigation = [
   { name: 'Home', href: '/' },
@@ -36,9 +40,9 @@ export default function Navbar() {
         <div className="flex justify-between h-[5rem] items-center">
 
           {/* Logo */}
-            <div className="bg-blue-800 rounded-xl px-3 py-3 text-xl font-bold text-white">
-              <Link href="/">AGT Vidros</Link>
-            </div>
+            <Link  href="/">
+              <Image src={logoagt} alt="Logo" layout="intrinsic" width={110} height={10} />
+            </Link>
 
           {/* Botão Mobile */}
         <div className="sm:hidden pr-0">

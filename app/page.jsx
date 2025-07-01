@@ -5,6 +5,10 @@ import Carousel from '../components/Carousel.jsx';
 import TestimonialsCarousel from '../components/TestmonialsCarousel.jsx'
 import ButtonPrimary from '@/components/Buttonprimary.jsx';
 
+const logoagt = '/agtvidroslogo.svg'
+
+const backgroundimage = '/guardacorpoescada.png'
+
 const images = [
   '/images.jpg',
   '/images.jpg',
@@ -56,14 +60,14 @@ export default function HomePage() {
         
         <div className='py-[4rem] z-10  mr-[100px]'>
             <h1 className="text-[25px] mb-4 sm:text-5xl font-extrabold text-blue-700">
-              Descubra a sacada de como tornar seu ambiente em alta performance de luxo para crescimento tanto pessoal quanto empresarial
+              Descubra a sacada de como tornar seu ambiente com alta performance de luxo para crescimento tanto pessoal quanto empresarial
             </h1>
             <p className="text-white text-lg sm:text-xl font-semibold">
               Uma experiência única, que mudará sua vida pra sempre.
             </p>
             <ButtonPrimary/>
         </div>
-          <img alt="Logo do Google" src="/guardacorpoescada.png" className=" absolute z-0 top-0 h-[30rem]  bg-no-repeat bg-center bg-cover overflow-hidden" Img/>
+          <Image fill alt="imagem da escada" src={backgroundimage} className=" absolute z-0 top-0 h-[30rem] blur-sm  bg-no-repeat bg-center bg-cover overflow-hidden" Img/>
           
       </div>
 
