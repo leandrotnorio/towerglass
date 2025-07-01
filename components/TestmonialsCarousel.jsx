@@ -1,52 +1,8 @@
 import Image from "next/image";
 import React, { useState } from "react";
 
-const testmonials = [
-  {
-    name: "Leandro Tenorio",
-    date: "07/10/2024",
-    stars: 5,
-    message: "Excelente serviço, muito satisfeito!",
-    image: "/fotoperfil.jpg",
-  },
-  {
-    name: "Maria Silva",
-    date: "05/09/2024",
-    stars: 5,
-    message: "obra finalizada no prazo, comprometimento e eficiencia na entrega do serviço",
-    image: "/fotoperfil.jpg",
-  },
-  {
-    name: "Carlos Souza",
-    date: "12/08/2024",
-    stars: 5,
-    message: "Atendimento ótimo, recomendo!",
-    image: "/fotoperfil.jpg",
-  },
-  {
-    name: "João Oliveira",
-    date: "22/07/2024",
-    stars: 5,
-    message: "há muito tempo não recebia um serviço com execelencia aqui na minha empresa agt superou !!!",
-    image: "/fotoperfil.jpg",
-  },
-  {
-    name: "gustavo ferreira",
-    date: "22/07/2024",
-    stars: 4,
-    message: "Bom, mas poderia ter mais opções.",
-    image: "/fotoperfil.jpg",
-  },
-  {
-    name: "Arthur Oliveira",
-    date: "22/07/2024",
-    stars: 5,
-    message: "visitei ontem o projeto do comercial ficou show!!!",
-    image: "/fotoperfil.jpg",
-  },
-];
 
-export default function TestimonialsCarousel(){
+export default function TestimonialsCarousel({testmonials}){
     const [current, setCurrent] = useState(0)
 
     const next = () => {

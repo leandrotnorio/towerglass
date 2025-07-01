@@ -84,6 +84,7 @@ export default function HomePage() {
       <div className='text-center'>
         <TestimonialsCarousel 
         reviews={testmonials}
+        testmonials={testmonials}
 
         />
       </div>
