@@ -60,7 +60,7 @@ useEffect(() => {
   return (
     <nav className={`bg-blue-700 shadow-md w-full fixed z-40 transition-transform duration-300 ${showNavbar ? 'translate-y-0' : '-translate-y-full'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-2">
-        <div className="flex justify-between h-[5rem] items-center">
+        <div className="flex justify-between h-[4rem] items-center">
 
           {/* Logo */}
             <Link  href="/">
@@ -68,7 +68,7 @@ useEffect(() => {
             </Link>
 
           {/* Botão Mobile */}
-        <div className="sm:hidden pr-0">
+        <div className="md:hidden pr-0">
             <button
               onClick={() => setMenuOpen(!menuOpen)}
               className="text-white text-2xl focus:outline-none"
@@ -80,7 +80,7 @@ useEffect(() => {
 
 
           {/* Menu Desktop */}
-          <div className="hidden sm:flex space-x-6">
+          <div className="hidden md:flex space-x-6">
             {navigation.map((item) => (
               <Link
                 key={item.name}
@@ -95,7 +95,7 @@ useEffect(() => {
 
       {/* Menu Mobile */}
       {menuOpen && (
-        <div className="sm:hidden transition-[max-height] duration-300 ease-in-out bg-blue-800 px-6 pt-6 space-y-7 shadow-md fixed z-50 top-[79px] right-0 w-1/2 h-[27rem]">
+        <div className="md:hidden transition-[max-height] duration-300 ease-in-out bg-blue-700 px-6 pt-6 space-y-7 shadow-md fixed z-50 top-[79px] sm:top-[64px] md:top-[44px] right-0 w-1/2 h-[27rem]">
           {navigation.map((item) => (
             <Link
               key={item.name}

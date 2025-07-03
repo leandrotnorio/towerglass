@@ -53,14 +53,14 @@ export default function HomePage() {
     <section className="bg-white shadow-lg">
 
       {/* HERO com imagem de fundo profissional */}
-      <div className="relative  mt-[76px] flex items-center justify-center text-center  h-[550px] sm:h-[600px] md:h-[700px] lg:h-[800px] overflow-hidden">
+      <div className="relative  mt-[76px] sm:mt-[60px] flex items-center justify-center text-center  h-[550px] sm:h-[600px] md:h-[700px] lg:h-[800px] overflow-hidden">
         
         
         {/* Imagem de fundo */}
 
         
         <div className='py-[4rem] z-10  mr-[100px]'>
-            <h1 className="text-[28px] mb-2 sm:text-5xl font-extrabold text-blue-700">
+            <h1 className="text-[28px] mb-2 sm:text-[30px] font-extrabold text-blue-700">
               Descubra a sacada de como tornar seu ambiente com alta performance de luxo para crescimento tanto pessoal quanto empresarial
             </h1>
             <p className="text-white text-lg sm:text-xl font-semibold">
