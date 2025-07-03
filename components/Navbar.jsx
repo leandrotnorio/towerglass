@@ -8,6 +8,8 @@ import Link from 'next/link'
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
   const menuRef = useRef(null)
+  const [showNavbar, setShowNavbar] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
   
   const logoagt = '/agtvidroslogo.svg'
   
@@ -20,6 +22,26 @@ export default function Navbar() {
   { name: 'Sobre nós', href: '/about' },
   { name: 'Contato', href: '#contato' },
 ]
+
+useEffect(() => {
+  const handleScroll = () => {
+    if (window.scrollY > lastScrollY) {
+      setShowNavbar(false); // rolando para baixo
+    } else {
+      setShowNavbar(true); // rolando para cima
+    }
+    setLastScrollY(window.scrollY);
+  };
+
+
+  window.addEventListener('scroll', handleScroll);
+
+  return () => {
+    window.removeEventListener('scroll', handleScroll);
+  };
+}, [lastScrollY]);
+
+
 
   useEffect(() => {
     const el = menuRef.current
@@ -36,7 +58,7 @@ export default function Navbar() {
 
 
   return (
-    <nav className="bg-blue-700 shadow-md w-full fixed z-40">
+    <nav className={`bg-blue-700 shadow-md w-full fixed z-40 transition-transform duration-300 ${showNavbar ? 'translate-y-0' : '-translate-y-full'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-2">
         <div className="flex justify-between h-[5rem] items-center">
 

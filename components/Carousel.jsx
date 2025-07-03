@@ -443,7 +443,7 @@ const InfiniteAutoCarousel = ({ images = [], speed = 0.1 }) => {
 
   return (
     <div
-      className="w-full mb-6 pb-8 lg:mb-6 overflow-hidden"
+      className="w-full mb-6 lg:mb-6 overflow-hidden"
       role="region"
       aria-label="Carrossel automático de imagens"
       onMouseEnter={pauseScroll}
@@ -456,7 +456,7 @@ const InfiniteAutoCarousel = ({ images = [], speed = 0.1 }) => {
        <h2 className="text-5xl py-4 sm:text-6xl font-bold text-blue-700">OBRAS</h2>
       <div
         ref={scrollRef}
-        className="flex mx-2 px-4  overflow-x-scroll space-x-6 scrollbar-hide"
+        className="flex mx-2 my-8 px-4  overflow-x-scroll space-x-8 scrollbar-hide"
         style={{ scrollSnapType: 'none', scrollBehavior: 'auto' }}
       >
         {duplicatedImages.map((image, index) => (
@@ -464,8 +464,8 @@ const InfiniteAutoCarousel = ({ images = [], speed = 0.1 }) => {
             key={index}
             src={image}
             alt={`Slide ${index + 1}`}
-            className="lg:h-[150px] h-[500px] object-cover flex-shrink-0 rounded-lg shadow-md"
-            style={{ minWidth: '100%' }}
+            className="lg:h-[400px] h-[400px] w-24 object-cover flex-shrink-0 rounded-lg shadow-md"
+            style={{ minWidth: '80%' }}
           />
         ))}
       </div>
