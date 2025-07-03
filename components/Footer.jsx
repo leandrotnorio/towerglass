@@ -10,7 +10,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-2 py-0 text-center">
         <Link  href="/">
           <Image    
-            src="/agtvidroslogo.svg"
+            src={logoagt}
             alt="Logo"
             width={120}
             height={30}
