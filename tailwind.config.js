@@ -17,6 +17,13 @@ module.exports = {
       fontFamily: {
         inter: ['Inter', 'sans-serif'],
       },
+      screens: {
+      'sm': '390px',   // Agora o sm será a partir de 500px
+      'md': '690px',   // md continua 768px
+      'lg': '990px',  // lg continua 1024px
+      'xl': '1290px',  // xl continua 1280px
+      '2xl': '1590px', // 2xl continua 1536px
+    },
     },
   },
   plugins: [function ({ addUtilities }) {
