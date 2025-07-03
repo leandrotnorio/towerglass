@@ -392,7 +392,7 @@ export default InfiniteAutoCarousel;*/
 
 
 
-'use client';
+/*'use client';
 import React, { useEffect, useRef } from 'react';
 
 const InfiniteAutoCarousel = ({ images = [], speed = 0.1 }) => {
@@ -400,8 +400,14 @@ const InfiniteAutoCarousel = ({ images = [], speed = 0.1 }) => {
   const animationRef = useRef(null);
   const timeoutRef = useRef(null);
   const isPausedRef = useRef(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const duplicatedImages = [...images, ...images];
+
+  const totalScrollWidth = container.scrollWidth / 2;
+  const slideWidth = container.scrollWidth / images.length / 2; // Largura de um slide
+  const index = Math.floor(container.scrollLeft / slideWidth) % images.length;
+  setCurrentIndex(index);
 
   useEffect(() => {
     const container = scrollRef.current;
@@ -466,6 +472,128 @@ const InfiniteAutoCarousel = ({ images = [], speed = 0.1 }) => {
             alt={`Slide ${index + 1}`}
             className="lg:h-[400px] h-[400px] w-24 object-cover flex-shrink-0 rounded-lg shadow-md"
             style={{ minWidth: '80%' }}
+          />
+        ))}
+      </div>
+      <div className="flex justify-center mt-4 space-x-2">
+  {images.map((_, index) => (
+    <span
+      key={index}
+      className={`h-3 w-3 rounded-full ${index === currentIndex ? 'bg-blue-700' : 'bg-gray-400'} transition-all duration-300`}
+    />
+  ))}
+</div>
+    </div>
+  );
+};
+
+export default InfiniteAutoCarousel;*/
+
+'use client';
+import React, { useEffect, useRef, useState } from 'react';
+
+const InfiniteAutoCarousel = ({ images = [], speed = 0.1 }) => {
+  const scrollRef = useRef(null);
+  const animationRef = useRef(null);
+  const timeoutRef = useRef(null);
+  const isPausedRef = useRef(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const duplicatedImages = [...images, ...images];
+
+  useEffect(() => {
+    const container = scrollRef.current;
+    if (!container || images.length === 0) return;
+
+    const scroll = () => {
+      if (!isPausedRef.current) {
+        container.scrollLeft += speed;
+
+        // Calcular o índice atual
+        const slideWidth = container.scrollWidth / 2 / images.length;
+        const index = Math.floor(container.scrollLeft / slideWidth) % images.length;
+        setCurrentIndex(index);
+
+        const totalScrollWidth = container.scrollWidth / 2;
+        if (container.scrollLeft >= totalScrollWidth) {
+          container.scrollLeft = 0;
+        }
+      }
+      animationRef.current = requestAnimationFrame(scroll);
+    };
+
+    animationRef.current = requestAnimationFrame(scroll);
+
+  const handleManualScroll = () => {
+    const slideWidth = container.scrollWidth / 2 / images.length;
+    const index = Math.floor(container.scrollLeft / slideWidth) % images.length;
+    setCurrentIndex(index);
+  };
+
+  container.addEventListener('scroll', handleManualScroll);
+  animationRef.current = requestAnimationFrame(scroll);
+
+  return () => {
+    cancelAnimationFrame(animationRef.current);
+    container.removeEventListener('scroll', handleManualScroll);
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+  };
+}, [images, speed]);
+
+
+  const pauseScroll = () => {
+    isPausedRef.current = true;
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
+    }
+  };
+
+  const resumeScrollWithDelay = () => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    timeoutRef.current = setTimeout(() => {
+      isPausedRef.current = false;
+    }, 2000);
+  };
+
+  return (
+    <div
+      className="w-full mb-6 lg:mb-6 overflow-hidden"
+      role="region"
+      aria-label="Carrossel automático de imagens"
+      onMouseEnter={pauseScroll}
+      onMouseLeave={resumeScrollWithDelay}
+      onTouchStart={pauseScroll}
+      onTouchEnd={resumeScrollWithDelay}
+      onTouchCancel={resumeScrollWithDelay}
+      onTouchMove={pauseScroll}
+    >
+      <h2 className="text-5xl py-4 sm:text-6xl font-bold text-blue-700">OBRAS</h2>
+
+      <div
+        ref={scrollRef}
+        className="flex mx-2 my-8 px-4 overflow-x-scroll space-x-8 scrollbar-hide"
+        style={{ scrollSnapType: 'none', scrollBehavior: 'auto' }}
+      >
+        {duplicatedImages.map((image, index) => (
+          <img
+            key={index}
+            src={image}
+            alt={`Slide ${index + 1}`}
+            className="lg:h-[400px] h-[400px] w-24 object-cover flex-shrink-0 rounded-lg shadow-md"
+            style={{ minWidth: '80%' }}
+          />
+        ))}
+      </div>
+
+      {/* Indicadores de bolinhas */}
+      <div className="flex justify-center mt-4 space-x-2">
+        {images.map((_, index) => (
+          <span
+            key={index}
+            className={`h-3 w-3 rounded-full ${
+              index === currentIndex ? 'bg-blue-700 scale-125' : 'bg-gray-300'
+            } transition-all duration-300`}
           />
         ))}
       </div>
