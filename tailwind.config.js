@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+
+
 module.exports = {
   content: [
     './app/**/*.{js,jsx,ts,tsx}',
@@ -17,5 +19,18 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [function ({ addUtilities }) {
+      addUtilities({
+        '.no-scrollbar': {
+          /* Esconder scrollbar em Webkit */
+          '&::-webkit-scrollbar': {
+            display: 'none',
+          },
+          /* Esconder scrollbar no IE, Edge */
+          '-ms-overflow-style': 'none',
+          /* Esconder scrollbar no Firefox */
+          'scrollbar-width': 'none',
+        },
+      });
+    },],
 };

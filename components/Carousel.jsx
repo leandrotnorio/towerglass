@@ -583,7 +583,7 @@ const InfiniteAutoCarousel = ({ images = [], speed = 0.1 }) => {
 
       <div
         ref={scrollRef}
-        className="flex  overflow-x-scroll space-x-14 no-scrollbar"
+        className="flex overflow-hidden overflow-x-scroll space-x-14 no-scrollbar"
         style={{ scrollSnapType: 'none', scrollBehavior: 'auto' }}
       >
         {duplicatedImages.map((image, index) => (
@@ -591,7 +591,7 @@ const InfiniteAutoCarousel = ({ images = [], speed = 0.1 }) => {
             key={index}
             src={image}
             alt={`Slide ${index + 1}`}
-            className="lg:h-[400px] h-[400px] w-[250px] object-cover flex-shrink-0 rounded-lg shadow-md"
+            className="lg:h-[400px] h-[400px] w-[250px]  object-cover flex-shrink-0 rounded-lg shadow-md"
             
           />
         ))}
