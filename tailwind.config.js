@@ -18,11 +18,11 @@ module.exports = {
         inter: ['Inter', 'sans-serif'],
       },
       screens: {
-      'xs':'350px',
-      'sm': '419px',   
-      'md': '535px',   
-      'lg': '670px',  
-      'xl': '764px'
+      'xs':'350px', //samsung s21//
+      'sm': '380px', //iphone 12//   
+      'md': '417px',  //mobile// 
+      'lg': '717px',  ////
+      'xl': '1092px'
     },
     },
   },
