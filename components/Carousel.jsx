@@ -489,6 +489,9 @@ const InfiniteAutoCarousel = ({ images = [], speed = 0.1 }) => {
 
 export default InfiniteAutoCarousel;*/
 
+
+
+
 'use client';
 import React, { useEffect, useRef, useState } from 'react';
 
@@ -505,14 +508,18 @@ const InfiniteAutoCarousel = ({ images = [], speed = 0.1 }) => {
     const container = scrollRef.current;
     if (!container || images.length === 0) return;
 
+    const slideWidth = container.scrollWidth / 2 / images.length;
+
+    const updateIndex = () => {
+      const index = Math.floor(container.scrollLeft / slideWidth) % images.length;
+      setCurrentIndex(index);
+    };
+
     const scroll = () => {
       if (!isPausedRef.current) {
         container.scrollLeft += speed;
 
-        // Calcular o índice atual
-        const slideWidth = container.scrollWidth / 2 / images.length;
-        const index = Math.floor(container.scrollLeft / slideWidth) % images.length;
-        setCurrentIndex(index);
+        updateIndex(); // atualiza a bolinha
 
         const totalScrollWidth = container.scrollWidth / 2;
         if (container.scrollLeft >= totalScrollWidth) {
@@ -522,24 +529,15 @@ const InfiniteAutoCarousel = ({ images = [], speed = 0.1 }) => {
       animationRef.current = requestAnimationFrame(scroll);
     };
 
+    container.addEventListener('scroll', updateIndex);
     animationRef.current = requestAnimationFrame(scroll);
 
-  const handleManualScroll = () => {
-    const slideWidth = container.scrollWidth / 2 / images.length;
-    const index = Math.floor(container.scrollLeft / slideWidth) % images.length;
-    setCurrentIndex(index);
-  };
-
-  container.addEventListener('scroll', handleManualScroll);
-  animationRef.current = requestAnimationFrame(scroll);
-
-  return () => {
-    cancelAnimationFrame(animationRef.current);
-    container.removeEventListener('scroll', handleManualScroll);
-    if (timeoutRef.current) clearTimeout(timeoutRef.current);
-  };
-}, [images, speed]);
-
+    return () => {
+      cancelAnimationFrame(animationRef.current);
+      container.removeEventListener('scroll', updateIndex);
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    };
+  }, [images, speed]);
 
   const pauseScroll = () => {
     isPausedRef.current = true;
@@ -553,7 +551,20 @@ const InfiniteAutoCarousel = ({ images = [], speed = 0.1 }) => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
     timeoutRef.current = setTimeout(() => {
       isPausedRef.current = false;
-    }, 2000);
+    }, 1000);
+  };
+
+  const handleDotClick = (index) => {
+    const container = scrollRef.current;
+    if (container) {
+      const slideWidth = container.scrollWidth / 2 / images.length;
+      container.scrollTo({
+        left: index * slideWidth,
+        behavior: 'smooth',
+      });
+      pauseScroll();
+      resumeScrollWithDelay();
+    }
   };
 
   return (
@@ -572,7 +583,7 @@ const InfiniteAutoCarousel = ({ images = [], speed = 0.1 }) => {
 
       <div
         ref={scrollRef}
-        className="flex mx-2 my-8 px-4 overflow-x-scroll space-x-8 scrollbar-hide"
+        className="flex mx-2 my-8 px-4 overflow-x-scroll space-x-8 no-scrollbar"
         style={{ scrollSnapType: 'none', scrollBehavior: 'auto' }}
       >
         {duplicatedImages.map((image, index) => (
@@ -580,7 +591,7 @@ const InfiniteAutoCarousel = ({ images = [], speed = 0.1 }) => {
             key={index}
             src={image}
             alt={`Slide ${index + 1}`}
-            className="lg:h-[400px] h-[400px] w-24 object-cover flex-shrink-0 rounded-lg shadow-md"
+            className="lg:h-[400px] h-[400px] object-cover flex-shrink-0 rounded-lg shadow-md"
             style={{ minWidth: '80%' }}
           />
         ))}
@@ -589,11 +600,13 @@ const InfiniteAutoCarousel = ({ images = [], speed = 0.1 }) => {
       {/* Indicadores de bolinhas */}
       <div className="flex justify-center mt-4 space-x-2">
         {images.map((_, index) => (
-          <span
+          <button
             key={index}
+            onClick={() => handleDotClick(index)}
             className={`h-3 w-3 rounded-full ${
               index === currentIndex ? 'bg-blue-700 scale-125' : 'bg-gray-300'
             } transition-all duration-300`}
+            aria-label={`Ir para slide ${index + 1}`}
           />
         ))}
       </div>
@@ -602,5 +615,4 @@ const InfiniteAutoCarousel = ({ images = [], speed = 0.1 }) => {
 };
 
 export default InfiniteAutoCarousel;
-
 
