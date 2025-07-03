@@ -18,11 +18,11 @@ module.exports = {
         inter: ['Inter', 'sans-serif'],
       },
       screens: {
-      'sm': '390px',   // Agora o sm será a partir de 500px
-      'md': '690px',   // md continua 768px
-      'lg': '990px',  // lg continua 1024px
-      'xl': '1290px',  // xl continua 1280px
-      '2xl': '1590px', // 2xl continua 1536px
+      'xs':'350px',
+      'sm': '442px',   
+      'md': '570px',   
+      'lg': '682px',  
+      'xl': '1395px'
     },
     },
   },
