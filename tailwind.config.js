@@ -19,9 +19,9 @@ module.exports = {
       },
       screens: {
       'xs':'350px', //samsung s21//
-      'sm': '380px', //iphone 12//   
-      'md': '417px',  //mobile// 
-      'lg': '717px',  ////
+      'sm': '550px', //iphone 12//   
+      'md': '750px',  //mobile// 
+      'lg': '850px',  ////
       'xl': '1092px'
     },
     },
