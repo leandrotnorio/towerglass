@@ -53,7 +53,7 @@ export default function HomePage() {
     <section className="bg-white shadow-lg">
 
       {/* HERO com imagem de fundo profissional */}
-      <div className="relative mt-[40px] xs:mt-[50px]  sm:mt-[40px] flex items-center justify-center text-center  h-[550px] sm:h-[600px] md:h-[700px] lg:h-[800px] overflow-hidden">
+      <div className="relative mt-[30px] xs:mt-[50px]  sm:mt-[40px] flex items-center justify-center text-center  h-[550px] sm:h-[600px] md:h-[700px] lg:h-[800px] overflow-hidden">
         
         
         {/* Imagem de fundo */}
