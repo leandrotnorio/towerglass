@@ -18,10 +18,10 @@ module.exports = {
         inter: ['Inter', 'sans-serif'],
       },
       screens: {
-      'xs':'390px', //samsung s21//
-      'sm': '430px', //iphone 12//   
-      'md': '750px',  //mobile// 
-      'lg': '850px',  ////
+      'xs':'375px', //iphone//
+      'sm': '412px',    
+      'md': '968px',  //tablet// 
+      'lg': '850px',  
       'xl': '1092px'
     },
     },

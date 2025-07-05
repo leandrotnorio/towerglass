@@ -41,7 +41,7 @@ export default function TestimonialsCarousel({testmonials}){
         </div>
         <p className="mb-16 text-black">Com base em 2.845 avaliações</p>
         <div className="w-full overflow-hidden mx-auto sm:mx-auto md:mx-auto  lg:mx-auto sm: py-6 bg-white rounded-lg shadow-lg flex flex-col items-center">
-          <Image alt="Logo do Google" src="/googlesemfundo1.svg" width={30} height={40} className="relative bottom-[13px] right-[125px]  sm:bottom-2 sm:right-[180px] md:right-[145px] lg:right-[310px] xl:right-[325px] z-10"/>
+          <Image alt="Logo do Google" src="/googlesemfundo1.svg" width={30} height={40} className="relative bottom-[13px] right-[125px] xs:right-[138px] sm:bottom-2 sm:right-[154px] md:right-[145px] lg:right-[310px] xl:right-[325px] z-10"/>
           <div className="flex flex-col absolute justify-start items-center space-x-4">
           <Image src={image} alt="foto da pessoa" width={80} height={0} className="rounded-full mb-4 -mt-20"/>
             <p className="font-bold text-xl  flex justify-center items center">{name}</p>
