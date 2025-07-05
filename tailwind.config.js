@@ -18,8 +18,8 @@ module.exports = {
         inter: ['Inter', 'sans-serif'],
       },
       screens: {
-      'xs':'350px', //samsung s21//
-      'sm': '550px', //iphone 12//   
+      'xs':'390px', //samsung s21//
+      'sm': '430px', //iphone 12//   
       'md': '750px',  //mobile// 
       'lg': '850px',  ////
       'xl': '1092px'
