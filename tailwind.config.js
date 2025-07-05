@@ -20,9 +20,9 @@ module.exports = {
       screens: {
       'xs':'375px', //iphone//
       'sm': '412px',    
-      'md': '968px',  //tablet// 
-      'lg': '850px',  
-      'xl': '1092px'
+      'md': '768px',  //tablet// 
+      'lg': '1024px',  
+      'xl': '1536px'
     },
     },
   },

@@ -60,13 +60,13 @@ export default function HomePage() {
 
         
         <div className='py-[4rem] z-10  mr-[100px]'>
-            <h1 className="text-[30px] mb-2 xs:text-[30px] sm:text-[30px] font-extrabold text-blue-700">
-              Descubra a sacada de como tornar seu ambiente com alta performance de luxo para crescimento tanto pessoal quanto empresarial
+            <h1 className="text-[25px] mb-2 xs:text-[30px] sm:text-[30px] font-extrabold text-blue-700">
+              Descubra a sacada de como tornar qualquer ambiente em alta performance de luxo para crescimento tanto pessoal quanto empresarial
             </h1>
             <p className="text-white text-lg sm:text-xl font-semibold">
-              Uma experiência única, que mudará sua vida pra sempre.
+              Uma experiência única, que mudará seu ambiente pra sempre.
             </p>
-            <ButtonPrimary/>
+            <ButtonPrimary />
         </div>
           <Image fill alt="imagem da escada" src={backgroundimage} className=" absolute opacity-75 z-0 top-0 h-[30rem] blur-sm  bg-no-repeat bg-center bg-cover overflow-hidden" />
           
