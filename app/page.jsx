@@ -13,7 +13,7 @@ const imagesbussines = [
   '/itaulogo.avif',
   '/carrefourlogo.svg',
   '/enxutologo.svg',
-  '/next.svg',
+  '/habibslogo.svg',
   '/o-boticario.svg'
 ];
 
