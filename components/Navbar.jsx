@@ -92,8 +92,11 @@ export default function Navbar() {
       {/* Menu Mobile */}
       {menuOpen && (
         <div
-          ref={menuRef}
-          className="md:hidden transition-[max-height] duration-300 ease-in-out bg-blue-700 px-6 pt-6 space-y-7 shadow-md fixed z-50 top-[60px] sm:top-[59px] md:top-[44px] right-0 w-1/2 h-[27rem]"
+        ref={menuRef}
+          className={`md:hidden transform transition-all transition-ease-linear duration-5000 bg-blue-700 px-6 pt-6 space-y-7 shadow-md fixed z-50 top-[60px] sm:top-[59px] md:top-[44px] right-0 w-1/2 h-[27rem] ${
+            menuOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
+          }`}
+
         >
           {navigation.map((item) => (
             <Link
