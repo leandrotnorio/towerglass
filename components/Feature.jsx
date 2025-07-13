@@ -14,7 +14,7 @@ const features = [
   },
   {
     icon: <FaThumbsUp className="text-blue-600 text-4xl" />,
-    title: "+10 anos",
+    title: "+36 anos",
     subtitle: "de experiência",
   },
   {
