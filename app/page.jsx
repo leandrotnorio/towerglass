@@ -4,6 +4,7 @@ import React from 'react';
 import Carousel from '../components/Carousel.jsx';
 import TestimonialsCarousel from '../components/TestmonialsCarousel.jsx'
 import ButtonPrimary from '@/components/Buttonprimary.jsx';
+import Input from '../components/Input.jsx';
 
 
 
@@ -107,6 +108,9 @@ export default function HomePage() {
       <Image className="col-span-2 mx-auto max-h-[90px] object-contain sm:col-start-2 lg:col-span-1" src={imagesbussines[4]}  alt="Reform" width={100} height={60} />
       <Image className="col-span-2 max-h-[50px] object-contain sm:col-start lg:col-span-1" src={imagesbussines[5]}  alt="Reform" width={100} height={60} />
     </div>
+  </div>
+  <div>
+    <Input/>
   </div>
 </div>
     </section>
