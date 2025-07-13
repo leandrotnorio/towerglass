@@ -1,5 +1,4 @@
-
-function ButtonReq({link, children}){
+function Button({link, children}){    
     return (
         <button className="my-8"><a href={link} // Usando o link diretamente na tag <a>
       target="_blank" // Abre o link em uma nova aba
@@ -14,7 +13,7 @@ export default function ButtonPrimary () {
 
     return (
         <div>
-            <ButtonReq link={"https://www.instagram.com/agtvidros"}>Solicitar Orçamento</ButtonReq>
+            <Button link={"https://www.instagram.com/agtvidros"}>Solicitar Orçamento</Button>
         </div>
     )
 

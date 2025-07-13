@@ -76,7 +76,7 @@ export default function HomePage() {
             <p className="text-white text-lg sm:text-xl font-semibold">
               Uma experiência única, que mudará seu ambiente pra sempre.
             </p>
-            <ButtonPrimary />
+            <ButtonPrimary />  
         </div>
           <Image fill alt="imagem da escada" src={backgroundimage} className=" absolute opacity-75 z-0 top-0 h-[30rem] blur-sm  bg-no-repeat bg-center bg-cover overflow-hidden" />
           

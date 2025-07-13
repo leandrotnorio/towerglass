@@ -1,11 +1,11 @@
 // Cadastro.js
 import React, { useState } from 'react';
-import ButtonPrimary from './Buttonprimary';
+import ButtonSecundary from './Buttonsecundary';
 
 const Cadastro = () => {
-  const [nome, setNome] = useState('');
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [senha, setSenha] = useState('');
+  const [number, setPassword] = useState('');
 
   // Função para validação de email
   const validarEmail = (email) => {
@@ -14,14 +14,14 @@ const Cadastro = () => {
   };
 
   // Função para validação de senha
-  const validarSenha = (senha) => {
-    return senha.length >= 6; // Exemplo de senha com no mínimo 6 caracteres
+  const validarNumber = (number) => {
+    return number.length >= 6; // Exemplo de senha com no mínimo 6 caracteres
   };
 
   const handleCadastro = (event) => {
     event.preventDefault();
 
-    if (!nome || !email || !senha) {
+    if (!name || !email || !number) {
       alert('Preencha todos os campos.');
       return;
     }
@@ -31,19 +31,19 @@ const Cadastro = () => {
       return;
     }
 
-    if (!validarSenha(senha)) {
+    if (!validarNumber(number)) {
       alert('Senha deve ter no mínimo 6 caracteres.');
       return;
     }
 
     // Aqui você pode fazer o envio para a API, por exemplo.
-    console.log('Dados cadastrados:', { nome, email, senha });
+    console.log('Dados cadastrados:', { number, email, number });
     alert('Cadastro realizado com sucesso!');
 
     // Limpar campos
-    setNome('');
+    setName('');
     setEmail('');
-    setSenha('');
+    setNumber('');
   };
 
   return (
@@ -57,8 +57,8 @@ const Cadastro = () => {
             style={styles.input}
             type="text"
             placeholder="Digite seu nome"
-            value={nome}
-            onChange={(e) => setNome(e.target.value)}
+            value={name}
+            onChange={(e) => setName(e.target.value)}
           />
         </div>
 
@@ -77,14 +77,14 @@ const Cadastro = () => {
           <label style={styles.label}>Número</label>
           <input
             style={styles.input}
-            type="password"
+            type="number"
             placeholder="digite o seu numero "
-            value={senha}
+            value={number}
             onChange={(e) => setSenha(e.target.value)}
           />
         </div>
 
-        <ButtonPrimary />
+        <ButtonSecundary />
       </form>
     </div>
   );
@@ -112,7 +112,7 @@ const styles = {
   },
   label: {
     display: 'block',
-    fontSize: '14px',
+    fontSize: '16px',
     marginBottom: '5px',
   },
   input: {
