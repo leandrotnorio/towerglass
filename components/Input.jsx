@@ -77,7 +77,7 @@ const Cadastro = () => {
           <label style={styles.label}>Número</label>
           <input
             style={styles.input}
-            type="number"
+            type="tel"
             placeholder="digite o seu numero "
             value={number}
             onChange={(e) => setNumber(e.target.value)}
