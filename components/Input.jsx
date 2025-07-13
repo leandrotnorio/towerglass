@@ -15,7 +15,10 @@ const Cadastro = () => {
 
   // Função para validação de senha
   const validarNumber = (number) => {
-    return number.length >= 6; // Exemplo de senha com no mínimo 6 caracteres
+    //number.length >= 6;
+    const regex = /^[0-9]+$/; // Somente números
+    return regex.test(number);
+    // Exemplo de senha com no mínimo 6 caracteres
   };
 
   const handleCadastro = (event) => {
@@ -32,7 +35,7 @@ const Cadastro = () => {
     }
 
     if (!validarNumber(number)) {
-      alert('Senha deve ter no mínimo 6 caracteres.');
+      alert('O número deve ter no mínimo 11 caracteres.');
       return;
     }
 
@@ -80,11 +83,17 @@ const Cadastro = () => {
             type="tel"
             placeholder="digite o seu numero "
             value={number}
-            onChange={(e) => setNumber(e.target.value)}
+            onChange={(e) => {
+              // Verifica se o input é um número antes de definir o estado
+              const value = e.target.value;
+              if (/^[0-9]*$/.test(value)) {
+                setNumber(value);
+              }
+            }}
+
           />
         </div>
-
-        <ButtonSecundary />
+          <ButtonSecundary />
       </form>
     </div>
   );

@@ -5,6 +5,7 @@ import Carousel from '../components/Carousel.jsx';
 import TestimonialsCarousel from '../components/TestmonialsCarousel.jsx'
 import ButtonPrimary from '@/components/Buttonprimary.jsx';
 import Input from '../components/Input.jsx';
+import Features from '../components/Feature.jsx';
 
 
 
@@ -111,6 +112,9 @@ export default function HomePage() {
   </div>
   <div>
     <Input/>
+  </div>
+   <div>
+    <Features/>
   </div>
 </div>
     </section>
