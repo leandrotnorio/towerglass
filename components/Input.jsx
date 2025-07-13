@@ -5,7 +5,7 @@ import ButtonSecundary from './Buttonsecundary';
 const Cadastro = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [number, setPassword] = useState('');
+  const [number, setNumber] = useState('');
 
   // Função para validação de email
   const validarEmail = (email) => {
@@ -37,7 +37,7 @@ const Cadastro = () => {
     }
 
     // Aqui você pode fazer o envio para a API, por exemplo.
-    console.log('Dados cadastrados:', { number, email, number });
+    console.log('Dados cadastrados:', { name, email, number });
     alert('Cadastro realizado com sucesso!');
 
     // Limpar campos
@@ -80,7 +80,7 @@ const Cadastro = () => {
             type="number"
             placeholder="digite o seu numero "
             value={number}
-            onChange={(e) => setSenha(e.target.value)}
+            onChange={(e) => setNumber(e.target.value)}
           />
         </div>
 
