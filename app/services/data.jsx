@@ -19,8 +19,8 @@ export const work = [{
 },
 {
   id: 3,
-  name: 'Esquadria janela',
+  name: 'Esquadria(porta)',
   accomplishment: 'serviço de aplicação de esquadria',
-  localImage: '/guardacorpoescada.png'
+  localImage: '/esquadria.jpg'
 }
 ];

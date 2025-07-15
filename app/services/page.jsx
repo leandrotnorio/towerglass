@@ -12,8 +12,8 @@ function ListSection({ title, description, work }) {
               src={person.localImage}
               alt={person.name}
               width={300}
-              height={200}
-              className="rounded-md"
+              height={100}
+              className="rounded-md w-full h-auto max-w-[300px] max-h-[300px] min-w-[300-px] min-h-[200px]"
             />
             <p className="mt-2">
               <b>{person.name}:</b> {person.accomplishment}
