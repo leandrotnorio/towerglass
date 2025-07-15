@@ -78,7 +78,7 @@ export default function Navbar() {
         <div className="flex justify-between h-[4rem] items-center">
           {/* Logo */}
           <Link href="/">
-            <Image src={logoagt} alt="Logo" width={150} height={40} />
+            <Image src={logoagt} alt="Logo" width={150} height={40} priority/>
           </Link>
 
           {/* Botão Mobile */}
