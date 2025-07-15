@@ -20,27 +20,8 @@ export default function TestimonialsCarousel({testmonials}){
       <div className='p-6 lg:justify-items-center bg-gray-200 text-center'>
         <h2 className='text-5xl text-center flex justify-center py-4 sm:text-6xl font-bold text-blue-700'>DEPOIMENTOS</h2>
         <p></p>
-        <div className="flex justify-center mb-4">
-          <Image 
-          alt="Logo do Google"
-          src="/logogoogle.svg"
-          width={100}
-          height={40}
-          />
-        </div>
-        <div className="flex justify-center mb-4">
-          {Array.from({length:5}).map((_, i) => (
-            <Image 
-              key={i}
-              src="/f.svg"
-              alt="estrela"
-              width={35}
-              height={24}
-              className="opacity-100"
-            />
-          ))}
-        </div>
-        <p className="mb-16 text-black">Com base em 2.845 avaliações</p>
+        
+        <p className="mb-16 font-bold text-black">Com base em 2.845 avaliações</p>
         <div  className="w-full overflow-x-auto no-scrollbar scrollbar-hide scroll-smooth  py-6 bg-white rounded-lg shadow-lg flex flex-col items-center">
           <Image alt="Logo do Google" src="/googlesemfundo1.svg" width={30} height={40} className="relative bottom-[13px] right-[125px] xs:right-[138px] sm:bottom-2 sm:right-[154px] md:right-[145px] lg:right-[310px] xl:right-[325px] z-10"/>
           <div className="flex flex-col absolute justify-start items-center space-x-4">

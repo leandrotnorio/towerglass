@@ -9,7 +9,8 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef(null);
   const [showNavbar, setShowNavbar] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  const buttonRef = useRef(null);
+
 
   const logoagt = '/agtvidroslogo.svg';
 
@@ -22,33 +23,32 @@ export default function Navbar() {
     { name: 'Contato', href: '#contato' },
   ];
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > lastScrollY) {
-        setShowNavbar(false); // Rolando para baixo
-      } else {
-        setShowNavbar(true); // Rolando para cima
-      }
-      setLastScrollY(window.scrollY);
-    };
+useEffect(() => {
+  const handleScroll = () => {
+    const currentY = window.scrollY;
 
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [lastScrollY]);
-
-  useEffect(() => {
-    const el = menuRef.current;
-    if (el) {
-      if (menuOpen) {
-        el.style.maxHeight = `${el.scrollHeight}px`; // Usando template literal para garantir a interpolação correta
-      } else {
-        el.style.maxHeight = '0px';
-      }
+    if (menuOpen) {
+      setMenuOpen(false);
     }
-  }, [menuOpen]);
+
+    if (currentY > lastScrollY.current) {
+      setShowNavbar(false);
+    } else {
+      setShowNavbar(true);
+    }
+
+    lastScrollY.current = currentY;
+  };
+
+  window.addEventListener('scroll', handleScroll, { passive: true });
+
+  return () => {
+    window.removeEventListener('scroll', handleScroll);
+  };
+}, [menuOpen]);
+
+
+
 
   return (
     <nav className={`bg-blue-700 shadow-md w-full fixed z-40 transition-transform duration-300 ${showNavbar ? 'translate-y-0' : '-translate-y-full'}`}>
@@ -62,16 +62,17 @@ export default function Navbar() {
           {/* Botão Mobile */}
           <div className="md:hidden pr-0">
             <button
-              onClick={() => setMenuOpen(!menuOpen)}
-              className="text-white text-2xl focus:outline-none"
-              aria-label="Toggle menu"
-            >
-              {menuOpen ? (
-                <FontAwesomeIcon icon={faTimes} className="text-white" /> // Ícone X do FontAwesome
-              ) : (
-                <FontAwesomeIcon icon={faBars} className="text-white" /> // Ícone ☰ do FontAwesome
-              )}
-            </button>
+    ref={buttonRef}
+    onClick={() => setMenuOpen(!menuOpen)}
+    className="text-white text-2xl focus:outline-none"
+    aria-label="Toggle menu"
+  >
+    {menuOpen ? (
+      <FontAwesomeIcon icon={faTimes} className="text-white" />
+    ) : (
+      <FontAwesomeIcon icon={faBars} className="text-white" />
+    )}
+  </button>
           </div>
 
           {/* Menu Desktop */}

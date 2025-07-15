@@ -8,27 +8,27 @@ import {
 
 const features = [
   {
-    icon: <FaCrown className="text-blue-600 text-4xl" />,
+    icon: <FaCrown className="text-blue-600 text-[70px]" />,
     title: "40 anos de expertise",
     subtitle: "no segmento de vidros e alumínio",
   },
   {
-    icon: <FaThumbsUp className="text-blue-600 text-4xl" />,
+    icon: <FaThumbsUp className="text-blue-600 text-[70px]" />,
     title: "+36 anos",
     subtitle: "de experiência",
   },
   {
-    icon: <FaGem className="text-blue-600 text-4xl" />,
+    icon: <FaGem className="text-blue-600 text-[70px]" />,
     title: "Acabamento",
     subtitle: "Impecável",
   },
   {
-    icon: <FaUserShield className="text-blue-600 text-4xl" />,
+    icon: <FaUserShield className="text-blue-600 text-[70px]" />,
     title: "Conformidade total",
     subtitle: "com normas de segurança",
   },
   {
-    icon: <FaProjectDiagram className="text-blue-600 text-4xl" />,
+    icon: <FaProjectDiagram className="text-blue-600 text-[70px]" />,
     title: "Ecossistema",
     subtitle: "de Soluções",
   },
