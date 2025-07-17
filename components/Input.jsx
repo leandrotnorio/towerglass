@@ -50,7 +50,7 @@ const Cadastro = () => {
   };
 
   return (
-    <div style={styles.container}>
+    <div className="flex flex-col items-center p-5 max-w-[400px] mx-auto border border-gray-300 rounded-lg" >
       <h1 className='text-blue-700 text-[50px] font-bold text-center py-8 flex justify-center'>CADASTRO</h1>
 
       <form onSubmit={handleCadastro}>
@@ -93,7 +93,7 @@ const Cadastro = () => {
 
           />
         </div>
-          <ButtonSecundary />
+          <ButtonSecundary/>
       </form>
     </div>
   );
