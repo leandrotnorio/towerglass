@@ -1,11 +1,11 @@
 'use client';
 import Image from 'next/image';
 import React from 'react';
-import Carousel from '../components/Carousel.jsx';
-import TestimonialsCarousel from '../components/TestmonialsCarousel.jsx'
-import ButtonPrimary from '@/components/Buttonprimary.jsx';
-import Input from '../components/Input.jsx';
-import Features from '../components/Feature.jsx';
+import Carousel from '../components/ui/Carousel.jsx';
+import TestimonialsCarousel from '../components/ui/TestmonialsCarousel.jsx'
+import ButtonPrimary from '@/components/ui/Buttonprimary.jsx';
+import Input from '../components/ui/Input.jsx';
+import Features from '../components/ui/Feature.jsx';
 
 
 
