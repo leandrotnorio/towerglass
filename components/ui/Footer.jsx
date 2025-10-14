@@ -18,7 +18,7 @@ export default function Footer() {
             />
           </Link>
           <address className="not-italic text-center sm:text-right text-sm">
-            <p>Contato: <a href="mailto:contato@engenhariavidros.com" className="underline hover:text-blue-300">contato@engenhariavidros.com</a></p>
+            <p>Contato: <a href="mailto:contato@agtidros.com.br" className="underline hover:text-blue-300">contato@agtidros.com.br</a></p>
             <p>&copy; {new Date().getFullYear()} AGT Vidros. Todos os direitos reservados.</p>
           </address>
         </div>
