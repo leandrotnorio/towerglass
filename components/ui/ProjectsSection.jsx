@@ -50,7 +50,7 @@ export default function ProjetosSection() {
     filtro === 'Todos' ? projetos : projetos.filter((p) => p.categoria === filtro);
 
   return (
-    <section className="py-14 bg-gray-50">
+    <section id='projetos' className="py-14 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6 text-center">
         <h2 className="text-[40px] font-medium text-blue-800 mb-3">Nossos Projetos</h2>
         <p className="text-gray-700 font-bold mb-10">

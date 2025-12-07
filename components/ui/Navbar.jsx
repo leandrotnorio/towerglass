@@ -19,7 +19,7 @@ export default function Navbar() {
     { name: 'Home', href: '/' },
     { name: 'Serviços', href: '#services' },
     //{ name: 'Produtos', href: '/products' },
-    //{ name: 'Tecnologias', href: '#tecnologias' },
+    { name: 'Projetos', href: '#projetos' },
     { name: 'Sobre Nós', href: '#about' },
     { name: 'Contato', href: '#contato' },
   ]
