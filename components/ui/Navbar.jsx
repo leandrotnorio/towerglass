@@ -21,7 +21,7 @@ export default function Navbar() {
     //{ name: 'Produtos', href: '/products' },
     //{ name: 'Tecnologias', href: '#tecnologias' },
     { name: 'Sobre Nós', href: '#about' },
-    { name: 'contato', href: '#contato' },
+    { name: 'Contato', href: '#contato' },
   ]
 
   useEffect(() => {
